@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>puch-game</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="vue-app">
+      <div id="point">
+        <span>{{points}}</span>
+      </div>
+      <div id="bag" v-bind:class="{burst:ended}">
+
+      </div>
+      <div id="bag-health">
+        <div v-bind:style="{width:health + '%'}"></div>
+      </div>
+      <div id="constrols">
+        <button id="boon" v-on:click="punch" v-show="!ended"></button>
+        <button v-on:click="restart" v-show="ended">RESTART</button>
+      </div>
+    </div>
+    <script src="dist/build.js"></script>
+
+  </body>
+</html>
